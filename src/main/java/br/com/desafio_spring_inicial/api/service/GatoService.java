@@ -26,4 +26,8 @@ public class GatoService {
     public List<Gato> buscarTodosGatos() {
         return gatoRepository.findAll();
     }
+
+    public void deletarGatoPeloId(Long id) {
+        gatoRepository.deleteById(id);
+    }
 }

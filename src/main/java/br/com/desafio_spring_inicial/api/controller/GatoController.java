@@ -35,4 +35,10 @@ public class GatoController {
         return gatoService.buscarTodosGatos();
     }
 
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deletarGatoPeloId(@PathVariable Long id) {
+        gatoService.deletarGatoPeloId(id);
+    }
+
 }

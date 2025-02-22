@@ -34,4 +34,10 @@ public class CachorroController {
     public List<Cachorro> buscarTodosCachorros() {
         return cachorroService.buscarTodosCachorros();
     }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deletarCachorroPeloId(@PathVariable Long id){
+        cachorroService.deletarCachorroPeloId(id);
+    }
 }

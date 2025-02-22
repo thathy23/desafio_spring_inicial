@@ -27,4 +27,8 @@ public class RestauranteService {
         return restauranteRepository.findAll();
     }
 
+    public void deletarRestaurantePeloId(Long id) {
+        restauranteRepository.deleteById(id);
+    }
+
 }

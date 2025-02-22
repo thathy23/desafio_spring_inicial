@@ -33,4 +33,10 @@ public class RestauranteController {
     public List<Restaurante> buscarTodosRestaurantes(){
         return restauranteService.buscarTodosRestaurantes();
     }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deletarRestaurantePeloId(@PathVariable Long id) {
+        restauranteService.deletarRestaurantePeloId(id);
+    }
 }

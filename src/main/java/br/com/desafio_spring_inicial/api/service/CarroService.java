@@ -24,4 +24,8 @@ public class CarroService {
     public List<Carro> buscarTodosCarros(){
         return carroRepository.findAll();
     }
+
+    public void deletarCarroPeloId(Long id) {
+        carroRepository.deleteById(id);
+    }
 }

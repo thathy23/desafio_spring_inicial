@@ -33,4 +33,10 @@ public class CarroController {
     public List<Carro> buscarTodosCarros(){
         return carroService.buscarTodosCarros();
     }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deletarCarroPeloId(@PathVariable Long id){
+        carroService.deletarCarroPeloId(id);
+    }
 }

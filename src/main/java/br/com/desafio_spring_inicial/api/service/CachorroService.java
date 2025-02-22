@@ -26,5 +26,8 @@ public class CachorroService {
         return cachorroRepository.findAll();
     }
 
+    public void deletarCachorroPeloId(Long id) {
+        cachorroRepository.deleteById(id);
+    }
 
 }
