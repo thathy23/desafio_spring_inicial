@@ -5,6 +5,7 @@ import br.com.desafio_spring_inicial.api.repository.RestauranteRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -14,11 +15,16 @@ public class RestauranteService {
     private final RestauranteRepository restauranteRepository;
 
     public void criarRestaurante(Restaurante restaurante){
+
         restauranteRepository.save(restaurante);
     }
 
     public Optional<Restaurante> buscarRestaurantePeloId(Long id){
         return restauranteRepository.findById(id);
+    }
+
+    public List<Restaurante> buscarTodosRestaurantes() {
+        return restauranteRepository.findAll();
     }
 
 }

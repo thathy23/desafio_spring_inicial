@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -25,5 +26,11 @@ public class RestauranteController {
     @ResponseStatus(HttpStatus.OK)
     public Optional<Restaurante> buscarRestaurantePeloId(@PathVariable Long id){
         return restauranteService.buscarRestaurantePeloId(id);
+    }
+
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
+    public List<Restaurante> buscarTodosRestaurantes(){
+        return restauranteService.buscarTodosRestaurantes();
     }
 }

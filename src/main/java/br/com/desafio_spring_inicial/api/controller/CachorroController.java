@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -26,5 +27,11 @@ public class CachorroController {
     @ResponseStatus(HttpStatus.OK)
     public Optional<Cachorro> buscarCachorroPeloId(@PathVariable Long id){
         return cachorroService.buscarCachorroPeloId(id);
+    }
+
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
+    public List<Cachorro> buscarTodosCachorros() {
+        return cachorroService.buscarTodosCachorros();
     }
 }

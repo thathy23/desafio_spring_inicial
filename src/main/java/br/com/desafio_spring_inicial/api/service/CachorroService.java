@@ -5,6 +5,7 @@ import br.com.desafio_spring_inicial.api.repository.CachorroRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -19,6 +20,10 @@ public class CachorroService {
 
     public Optional<Cachorro> buscarCachorroPeloId(Long id){
         return cachorroRepository.findById(id);
+    }
+
+    public List<Cachorro> buscarTodosCachorros() {
+        return cachorroRepository.findAll();
     }
 
 
